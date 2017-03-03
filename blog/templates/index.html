@@ -1,29 +1,10 @@
-{% extends "bootstrap/base.html" %}
-{% block title %}My Blog{% endblock %}
-{% block navbar %}
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle"data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar">ttt</span>
-                <span class="icon-bar">aaa</span>
-                <span class="icon-bar">ggg</span>
-            </button>
-            <a class="navbar-brand" href="/">Flasky</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/wife">Home</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+{% extends "base.html" %}
+{% block title %}
+    {{ title }}
 {% endblock %}
 {% block content %}
-<div class="container">
-    <div class="page-header">
-        <h1>Hello, {{ name }}!</h1>
-    </div>
-</div>
+    <h2>Welcome author:{{ g.user.name }}</h2>
+    <hr>
+    <p>Hello World</p>
+    <p>Hello World</p>
 {% endblock %}

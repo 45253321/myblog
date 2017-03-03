@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <form action="/login" method="POST">
+        {{ aform.hidden_tag() }}
+        Name:
+        {{ aform.name(size=20) }}
+        {% for error in aform.passwd.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+        <br>
+        Passwd:
+        {{ aform.passwd(size=20) }}
+        {% for error in aform.passwd.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}

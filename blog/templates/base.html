@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('login')}}">Login</a>
+        <a href="{{ url_for('logout')}}">Logout</a>
+    </nav>
+    {% if g.user.is_authenticated %}
+        <h3>Show {{ g.user.name }} blog</h3>
+    {% else %}
+        <h3>Show my blog</h3>
+    {% endif %}
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+</html>
